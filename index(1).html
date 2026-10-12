@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff347d">
+  <meta name="description" content="Make every celebration memorable with KlikTala PH Photobooth Rentals in Balagtas, Bulacan.">
+  <title>KlikTala PH | Photobooth Rentals</title>
+
+  <style>
+    :root {
+      --pink: #ff347d;
+      --pink-light: #fff0f6;
+      --teal: #10c8d0;
+      --yellow: #ffda45;
+      --ink: #24233a;
+      --cream: #fffaf6;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .top-note {
+      background: var(--ink);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 246, 0.96);
+      border-bottom: 1px solid #f3dce5;
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 25px;
+      font-weight: 1000;
+      letter-spacing: -1.5px;
+      white-space: nowrap;
+    }
+
+    .brand .klik {
+      color: var(--pink);
+    }
+
+    .brand .tala {
+      color: #00aebc;
+    }
+
+    .brand small {
+      display: block;
+      text-align: center;
+      color: var(--ink);
+      font-size: 9px;
+      letter-spacing: 4px;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 23px;
+      border-radius: 50px;
+      background: var(--pink);
+      color: white;
+      font-weight: 800;
+      border: 2px solid var(--pink);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px #ff347d35;
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--ink);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--pink);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 85px 0 90px;
+      background:
+        radial-gradient(circle at 88% 15%, #ffda4580 0 80px, transparent 82px),
+        radial-gradient(circle at 76% 88%, #10c8d040 0 115px, transparent 117px),
+        var(--pink-light);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: white;
+      color: #d91d64;
+      border: 1px solid #ffd1e1;
+      border-radius: 50px;
+      padding: 7px 15px;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(43px, 6vw, 72px);
+      line-height: 1.03;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    h1 .pink {
+      color: var(--pink);
+    }
+
+    h1 .teal {
+      color: #00aebc;
+    }
+
+    .hero-copy {
+      font-size: 17px;
+      max-width: 510px;
+      color: #59566a;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-visual {
+      min-height: 360px;
+      background: white;
+      border: 8px solid white;
+      border-radius: 28px;
+      box-shadow: 0 20px 55px #6d335020;
+      transform: rotate(2deg);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+    }
+
+    .photo-label {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      background: white;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 900;
+      box-shadow: 0 4px 15px #0002;
+    }
+
+    .photo-label span {
+      color: var(--pink);
+    }
+
+    .benefits {
+      background: white;
+      border-block: 1px solid #f3e5e8;
+      padding: 23px 0;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .benefit {
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .benefit span {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 3px;
+    }
+
+    section.content-section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 45px;
+    }
+
+    .section-tag {
+      color: #d91d64;
+      font-weight: 900;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      letter-spacing: -1.5px;
+      line-height: 1.2;
+      margin: 10px 0 14px;
+    }
+
+    .section-heading p {
+      color: #777184;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .package-card {
+      position: relative;
+      background: white;
+      border: 2px solid #f4dce6;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px #45243d0a;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .package-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px #45243d15;
+    }
+
+    .package-top {
+      padding: 25px 27px;
+      background: var(--pink);
+      color: white;
+    }
+
+    .package-card.magnetic .package-top {
+      background: #00b8c2;
+      color: var(--ink);
+    }
+
+    .package-number {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .package-top h3 {
+      font-size: 25px;
+      line-height: 1.25;
+      margin: 8px 0;
+    }
+
+    .price {
+      font-size: 38px;
+      font-weight: 1000;
+      letter-spacing: -1.5px;
+    }
+
+    .price-note {
+      font-size: 12px;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    .package-body {
+      padding: 26px 27px 30px;
+    }
+
+    .package-body h4 {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .features {
+      list-style: none;
+      display: grid;
+      gap: 13px;
+      margin-bottom: 25px;
+    }
+
+    .features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #514d60;
+    }
+
+    .check {
+      color: #00aebc;
+      font-weight: 1000;
+    }
+
+    .package-body .btn {
+      width: 100%;
+    }
+
+    .gallery-section {
+      background: #fff0f6;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: white;
+      border: 5px solid white;
+      box-shadow: 0 8px 25px #512b3d10;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      padding: 13px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .transport-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 25px;
+      background: var(--yellow);
+      border-radius: 25px;
+      padding: 35px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .transport-icon {
+      font-size: 60px;
+    }
+
+    .transport-card h3 {
+      font-size: 25px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .transport-card p {
+      color: #50462c;
+    }
+
+    .about-section {
+      background: white;
+    }
+
+    .about-content {
+      max-width: 760px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .about-content p {
+      color: #777184;
+      margin-top: 15px;
+    }
+
+    .contact-section {
+      background: var(--ink);
+      color: white;
+      text-align: center;
+    }
+
+    .contact-section .section-heading p {
+      color: #ded9e7;
+    }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 25px 0 30px;
+    }
+
+    .contact-chip {
+      background: #ffffff12;
+      border: 1px solid #ffffff30;
+      padding: 14px 20px;
+      border-radius: 14px;
+    }
+
+    .contact-chip strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .contact-chip a:hover {
+      color: var(--teal);
+    }
+
+    footer {
+      background: #191827;
+      color: #c9c5d6;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        flex-direction: column;
+        padding: 16px 0;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 12px;
+      }
+
+      .nav-links .btn {
+        padding: 9px 13px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-visual {
+        min-height: 250px;
+      }
+
+      .hero-visual img {
+        height: 280px;
+      }
+
+      section.content-section {
+        padding: 65px 0;
+      }
+
+      .packages {
+        grid-template-columns: 1fr;
+        max-width: 460px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .gallery-item img {
+        height: 180px;
+      }
+
+      .transport-card {
+        padding: 25px 20px;
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 5px;
+      }
+
+      .transport-icon {
+        font-size: 45px;
+      }
+
+      .benefit-grid {
+        gap: 8px;
+      }
+
+      .benefit {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .nav-links {
+        gap: 10px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .price {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-note">
+    📸 YOUR MOMENTS, YOUR MEMORIES — LET'S MAKE THEM UNFORGETTABLE!
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#home" aria-label="KlikTala PH Home">
+        <span class="klik">Klik</span><span class="tala">Tala</span> PH
+        <small>PHOTOBOOTH RENTALS</small>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#packages">Packages</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn">Book Now ✨</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">✨ PHOTOBOOTH FOR EVERY OCCASION</div>
+          <h1>
+            Capture <span class="pink">Fun.</span><br>
+            Create <span class="teal">Memories!</span>
+          </h1>
+          <p class="hero-copy">
+            Every click tells a story! Make your birthdays, weddings,
+            debuts, and special celebrations extra memorable with
+            KlikTala PH Photobooth Rentals.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn" href="#packages">View Our Packages →</a>
+            <a class="btn btn-outline" href="tel:09066203001">☎ Call Us</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1000&q=85"
+            alt="Colorful celebration and party decorations"
+          >
+          <div class="photo-label">📸 <span>Smile!</span> It's KlikTala time.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="benefits">
+      <div class="container benefit-grid">
+        <div class="benefit">
+          <span>📷</span>
+          Unlimited Shots
+        </div>
+        <div class="benefit">
+          <span>🖨️</span>
+          High-Quality Prints
+        </div>
+        <div class="benefit">
+          <span>🎉</span>
+          Fun Props Included
+        </div>
+      </div>
+    </div>
+
+    <section class="content-section" id="packages">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">Find Your Perfect Package</span>
+          <h2>Our Photobooth Packages 💖</h2>
+          <p>
+            Choose the photobooth experience that fits your celebration.
+            Both packages include 2 hours of service.
+          </p>
+        </div>
+
+        <div class="packages">
+          <article class="package-card">
+            <div class="package-top">
+              <div class="package-number">Package 01</div>
+              <h3>Photo Standee</h3>
+              <div class="price">₱2,000</div>
+              <div class="price-note">FOR 2 HOURS OF SERVICE</div>
+            </div>
+
+            <div class="package-body">
+              <h4>YOUR PACKAGE INCLUDES:</h4>
+              <ul class="features">
+                <li><span class="check">✔</span> 2 Hours Photobooth Service</li>
+                <li><span class="check">✔</span> Unlimited Shots</li>
+                <li><span class="check">✔</span> High-Quality Prints</li>
+                <li><span class="check">✔</span> Free Use of Fun Props</li>
+                <li><span class="check">✔</span> Digital Copies</li>
+                <li><span class="check">✔</span> Photobooth Attendant</li>
+                <li><span class="check">✔</span> 4R Photo</li>
+              </ul>
+              <a class="btn" href="#contact">Inquire About This Package →</a>
+            </div>
+          </article>
+
+          <article class="package-card magnetic">
+            <div class="package-top">
+              <div class="package-number">Package 02 ✨</div>
+              <h3>Full Magnetic</h3>
+              <div class="price">₱3,500</div>
+              <div class="price-note">FOR 2 HOURS OF SERVICE</div>
+            </div>
+
+            <div class="package-body">
+              <h4>YOUR PACKAGE INCLUDES:</h4>
+              <ul class="features">
+                <li><span class="check">✔</span> 2 Hours Photobooth Service</li>
+                <li><span class="check">✔</span> Unlimited Shots</li>
+                <li><span class="check">✔</span> Full Magnetic Photo Prints</li>
+                <li><span class="check">✔</span> High-Quality Prints</li>
+                <li><span class="check">✔</span> Free Use of Fun Props</li>
+                <li><span class="check">✔</span> Digital Copies</li>
+                <li><span class="check">✔</span> Photobooth Attendant</li>
+              </ul>
+              <a class="btn btn-teal" href="#contact">Inquire About This Package →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">Strike a Pose!</span>
+          <h2>Moments Worth Keeping 📸</h2>
+          <p>
+            A little preview of the fun, smiles, and memories
+            you can create at your next celebration.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=80"
+              alt="Colorful live celebration"
+              loading="lazy"
+            >
+            <div class="gallery-caption">Let's Celebrate! 🎉</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=80"
+              alt="Wedding event setup"
+              loading="lazy"
+            >
+            <div class="gallery-caption">Special Occasions 💖</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=80"
+              alt="Party decorations"
+              loading="lazy"
+            >
+            <div class="gallery-caption">Good Vibes Only ✨</div>
+          </div>
+        </div>
+
+        <p style="text-align:center; font-size:12px; color:#777184; margin-top:22px;">
+          Sample photos shown. Replace these with actual KlikTala PH event photos.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section" id="transport">
+      <div class="container">
+        <div class="transport-card">
+          <div class="transport-icon">🚚</div>
+          <div>
+            <h3>FREE TRANSPORTATION!</h3>
+            <p>
+              Free transportation within <strong>20 km from
+              Balagtas, Bulacan.</strong> Contact us to confirm
+              availability for your event location.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section about-section" id="about">
+      <div class="container about-content">
+        <span class="section-tag">A Little About Us</span>
+        <h2>Every Click Tells a Story 💕</h2>
+        <p>
+          At KlikTala PH Photobooth Rentals, we want to make your
+          celebrations more fun and memorable. From birthdays and
+          weddings to debuts and corporate events, we're here to
+          help you capture moments you can look back on and cherish.
+        </p>
+        <p>
+          Based in Balagtas, Bulacan, we're ready to bring the fun
+          to your special event!
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag" style="color:#ffda45;">Let's Make Memories!</span>
+          <h2>Ready to Book Your Event?</h2>
+          <p>
+            Have a celebration coming up? Call us to ask about
+            package availability and booking details.
+          </p>
+        </div>
+
+        <div class="contact-details">
+          <div class="contact-chip">
+            <strong>📍 OUR LOCATION</strong>
+            Balagtas, Bulacan
+          </div>
+
+          <div class="contact-chip">
+            <strong>☎ CONTACT NUMBER</strong>
+            <a href="tel:09066203001">0906 620 3001</a>
+          </div>
+
+          <div class="contact-chip">
+            <strong>🚚 TRANSPORTATION</strong>
+            Free within 20 km
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:24px; display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+          <a class="btn" href="tel:09066203001">☎ Call KlikTala PH Now</a>
+          <a href="https://www.facebook.com/profile.php?id=61594934018142"
+             target="_blank"
+             rel="noopener noreferrer"
+             style="display:inline-block; padding:13px 23px; border-radius:50px; background:#10c8d0; color:#24233a; font-weight:800; text-decoration:none;">
+            f Visit Our Facebook Page
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>KlikTala PH Photobooth Rentals</strong></p>
+    <p>Capture Fun. Create Memories!</p>
+    <p>Balagtas, Bulacan · 0906 620 3001</p>
+    <p style="margin-top:12px;">© <span id="year"></span> KlikTala PH. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
